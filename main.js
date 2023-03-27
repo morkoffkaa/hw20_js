@@ -1,11 +1,11 @@
-const array = [1,2,3,true,78,55,`olena`,89,45];
+const array = [1, 2, [34, 56, 78, 6, 55], 3, true, 78, 55, `olena`, 89, 45];
 
 const generateList = (arr) => {
     const ul = document.createElement('ul');
     arr.forEach(item => {
         let li = document.createElement('li');
-        if(Array.isArray(item)) {
-           li.append(generateList(item));
+        if (Array.isArray(item)) {
+            li.append(generateList(item));
         } else {
             li.textContent = item;
         }
@@ -17,3 +17,4 @@ const generateList = (arr) => {
 }
 
 document.body.prepend(generateList(array));
+
